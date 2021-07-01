@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3a2b433536.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Random Picker</title>
+</head>
+<body>
+
+    <div class="display-container">
+        <div id="display">
+            <div>Shreekesh</div>
+        </div>
+    </div>
+
+    <main>        
+
+        <div class="wrapper">
+            <div class="list-container">
+                <div class="list">
+                </div>
+                <form>
+                    <label for="addToList">Add to list:</label>
+                    <input type="text" name="addToList" id="addToList" autocomplete="off">
+                    <div class="form-buttons">
+                        <button id="add">Add</button>
+                        <button id="close">Close</button>
+                    </div>
+                </form>
+            </div>
+            <div class="buttons">
+                <div class="button-wrapper">
+                    <button id="reset">Reset</button>
+                    <button id="edit">Edit list</button>
+                </div>
+                <div class="button-wrapper">
+                    <button id="pickOne">Pick one!</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
