@@ -69,7 +69,8 @@ class TextScramble {
     }
     
     randomChar() {
-        return this.chars[Math.floor(Math.random() * this.chars.length)]
+        return getRandom(this.chars)
+        // return this.chars[Math.floor(Math.random() * this.chars.length)]
     }
 }
 // instance
@@ -87,20 +88,17 @@ const displayOnList = item => {
 
 const removeItem = item => students.splice(students.indexOf(item), 1);
 
-const pickOne = () => {
-    return getRandom(students)    
-}
+const pickOne = () => getRandom(students);
 
 const next = () => {
     scrambleText.setText(students[counter]).then(() => {
-        setTimeout(next)
+        setTimeout(next, 1)
     })
-    counter = Math.floor(Math.random() * students.length)
+    // counter = Math.floor(Math.random() * students.length)
+    counter = (counter + 1) % students.length
 }
 
-const stop = (item) => {
-  scrambleText.setText(item)
-}
+const stop = (item) => scrambleText.setText(item);
 
 
 // events
