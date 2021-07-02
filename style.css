@@ -13,64 +13,51 @@
 body {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), center / cover no-repeat url('./assets/background1.gif');
-    background-attachment: scroll;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), center / cover no-repeat url('./assets/background1.gif');
+    /* background-attachment: fixed; */
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    overflow: hidden;
+}
+
+main {
+    width: fit-content;
+    height: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:relative;
 }
 
 .display-container {
     width: 100%;
-    padding: 25px;
+    margin: -50px auto 100px;
+    padding: 10px;
+    position: fixed;
 }
 
 #display {
     width: 100%;
     height: 100%;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-
-#display div {
-    padding: 20px;
-    font-size: 3.2rem;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    animation: slot-machine 5s infinite linear forwards;
-}
-
-main {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
+    font-size: 3.2rem;
+    text-align: center;
 }
 
-.wrapper {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.symbol {
+    color: #757575;
 }
 
 .list-container {
     display: none;
-    width: 100%;
+    max-width: 340px;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), center / cover no-repeat url('./assets/background.gif');
-    margin: 0px auto;
+    margin: 50px auto;
     padding: 15px;
     color: white;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.795);
@@ -123,12 +110,11 @@ label {
 
 input {
     width: 100%;
-    padding: 2px 3px 0;
+    padding: 2px 5px 0;
     background-color: rgba(255, 255, 255, 0.3);
     color: white;
     font-size: 1rem;
     line-height: 150%;
-    align-items: center;
 }
 
 /* ----- BUTTON STYLES ----- */
@@ -194,6 +180,8 @@ input {
     align-self: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .button-wrapper {
@@ -215,7 +203,7 @@ button {
     background: #92CD41;
     color: white;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: center;
     text-decoration: none;
     box-shadow: inset -4px -4px 0px 0px #4AA52E;
@@ -293,4 +281,26 @@ button:after {
 }
 
 
-/* Keyframes */
+/* MEDIA QUERIES */
+@media screen and (max-width: 500px) {
+
+    .display-container {
+        padding: 2px;
+    }
+
+    #display {
+        width: max-content;
+        font-size: 1.9rem;
+    }
+
+    .buttons {
+        width: 75%;
+        margin: 0 auto;
+        margin-top: 200px;
+    }
+
+    button {
+        padding: 7px;
+        font-size: 0.75rem;
+    }
+}
