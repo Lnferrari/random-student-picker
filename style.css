@@ -1,3 +1,4 @@
+/* reset styles */
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +15,13 @@ body {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), center / cover no-repeat url('./assets/background1.gif');
-    /* background-attachment: fixed; */
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
+
+/* ----- MAIN STYLES ----- */
 
 main {
     width: fit-content;
@@ -32,6 +34,8 @@ main {
     align-items: center;
     position:relative;
 }
+
+/* ----- DISPLAY STYLES ----- */
 
 .display-container {
     width: 100%;
@@ -52,6 +56,8 @@ main {
 .symbol {
     color: #757575;
 }
+
+/* ----- LIST of NAMES STYLES ----- */
 
 .list-container {
     display: none;
@@ -94,6 +100,7 @@ main {
     cursor: pointer;
 }
 
+/* ----- FORM STYLES ----- */
 
 form {
     width: 100%;
@@ -198,6 +205,8 @@ input {
     gap: 20px;
 }
 
+/* all buttons & pickOne */
+
 button {
     padding: 10px;
     background: #92CD41;
@@ -245,6 +254,13 @@ button:after {
     border-right: 6px black solid;
 }
 
+
+#pickOne {
+    width: 100%;
+}
+
+/* reset button */
+
 #reset {
     grid-area: reset;
     background: #E76E55;
@@ -261,6 +277,8 @@ button:after {
     box-shadow: inset 4px 4px 0px 0px #8C2022;
 }
 
+/* edit button */
+
 #edit {
     grid-area: edit;
     background: #F7D51D;
@@ -276,12 +294,11 @@ button:after {
     box-shadow: inset 4px 4px 0px 0px #E59400;
 }
 
-#pickOne {
-    width: 100%;
-}
+/* pick one button */
 
 
-/* MEDIA QUERIES */
+
+/* ----- MEDIA QUERIES ----- */
 @media screen and (max-width: 500px) {
 
     .display-container {

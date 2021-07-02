@@ -1,5 +1,6 @@
-// variables
-let counter = 0
+// VARIABLES --------------------------
+let counter = 0;
+let student;
 const students = ['Aimee', 'Beda', 'Carlos', 'Charli', 'Christoph', 'Dalibor', 'Daniel', 'Francesco', 'Habid', 'Jonathan', 'Lucas', 'Lui', 'Martin', 'Mo', 'Norman', 'Priya', 'Shinhee', 'Shreekesh', 'Tim']
 const deleteIcon = '<i class="far fa-trash-alt delete"></i>'
 const display = document.querySelector('#display')
@@ -12,19 +13,18 @@ const addBtn = document.querySelector('#add')
 const closeBtn = document.querySelector('#close')
 const pickOneBtn = document.querySelector('#pickOne')
 
-// Class
+// CLASS (for the animation) --------------------------
 class TextScramble {
     constructor(el) {
         this.el = el
-        this.chars = '$!<>-_\\/[]@&{}—=+*^?#________'
-        // this.chars = '$!<>-_\\/[]@&{}—=+*^?#________aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ'
+        this.chars = '$!<>-_\\/[]@&{}—=+*^?#_____'
         this.update = this.update.bind(this)
     }
 
     setText(newText) {
         const oldText = this.el.innerText
-        //const length = students.length
-        const length = Math.max(oldText.length, newText.length)
+        const length = 14
+        // const length = Math.max(oldText.length, newText.length)
         const promise = new Promise((resolve) => this.resolve = resolve)
         this.queue = []
         for (let i = 0; i < length; i++) {
@@ -70,13 +70,12 @@ class TextScramble {
     
     randomChar() {
         return getRandom(this.chars)
-        // return this.chars[Math.floor(Math.random() * this.chars.length)]
     }
 }
 // instance
 const scrambleText = new TextScramble(display)
 
-// functions
+// FUNCTIONS --------------------------
 const getRandom = array => array[Math.floor(Math.random() * array.length)];
 
 const displayOnList = item => {
@@ -92,16 +91,15 @@ const pickOne = () => getRandom(students);
 
 const next = () => {
     scrambleText.setText(students[counter]).then(() => {
-        setTimeout(next, 1)
+        setTimeout(next, 50)
     })
-    // counter = Math.floor(Math.random() * students.length)
-    counter = (counter + 1) % students.length
+    counter = (counter + 1) % students.length;
 }
 
 const stop = (item) => scrambleText.setText(item);
 
 
-// events
+// EVENTS --------------------------
 window.addEventListener('load', ()=> students.forEach(item => displayOnList(item)))
 
 editBtn.addEventListener('click', ()=> {
@@ -130,15 +128,17 @@ resetBtn.addEventListener('click', ()=>{
 })
 
 pickOneBtn.addEventListener('click', ()=>{
-    const student = pickOne()
     next()
-    setTimeout(()=> stop(student), 6500)
-    removeItem(student)
-    Array.from(list.children).forEach(item => {
-        if (item.innerText === student){
-            item.firstElementChild.style.color = '#757575';
-        }
-    })
+    setTimeout(()=> {
+        student = pickOne()
+        stop(student)
+        removeItem(student)
+        Array.from(list.children).forEach(item => {
+            if (item.innerText === student){
+                item.firstElementChild.style.color = '#757575';
+            }
+        })
+    }, 6500)
 })
 
 
