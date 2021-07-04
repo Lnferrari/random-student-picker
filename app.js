@@ -91,7 +91,7 @@ const pickOne = () => getRandom(students);
 
 const next = () => {
     scrambleText.setText(students[counter]).then(() => {
-        setTimeout(next, 50)
+        setTimeout(next, 10)
     })
     counter = (counter + 1) % students.length;
 }
