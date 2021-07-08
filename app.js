@@ -12,6 +12,10 @@ const editBtn = document.querySelector('#edit')
 const addBtn = document.querySelector('#add')
 const closeBtn = document.querySelector('#close')
 const pickOneBtn = document.querySelector('#pickOne')
+const bgMusic = new Audio('./assets/music.mp3')
+const successSound = new Audio('./assets/success.mp3')
+bgMusic.volume = 0.2
+successSound.volume = 0.1
 
 // CLASS (for the animation) --------------------------
 class TextScramble {
@@ -91,7 +95,7 @@ const pickOne = () => getRandom(students);
 
 const next = () => {
     scrambleText.setText(students[counter]).then(() => {
-        setTimeout(next, 10)
+        setTimeout(next, 1)
     })
     counter = (counter + 1) % students.length;
 }
@@ -100,7 +104,10 @@ const stop = (item) => scrambleText.setText(item);
 
 
 // EVENTS --------------------------
-window.addEventListener('load', ()=> students.forEach(item => displayOnList(item)))
+bgMusic.play()
+window.addEventListener('load', ()=> {
+    students.forEach(item => displayOnList(item))
+})
 
 editBtn.addEventListener('click', ()=> {
     listContainer.style.display = 'inline-block';
@@ -128,6 +135,7 @@ resetBtn.addEventListener('click', ()=>{
 })
 
 pickOneBtn.addEventListener('click', ()=>{
+    bgMusic.play()
     next()
     setTimeout(()=> {
         student = pickOne()
@@ -138,7 +146,11 @@ pickOneBtn.addEventListener('click', ()=>{
                 item.firstElementChild.style.color = '#757575';
             }
         })
-    }, 6500)
+    }, 2500)
+    setTimeout(()=> {
+        bgMusic.pause()
+        successSound.play()
+    }, 3200)
 })
 
 
