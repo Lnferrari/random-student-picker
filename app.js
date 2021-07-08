@@ -14,10 +14,9 @@ const closeBtn = document.querySelector('#close')
 const pickOneBtn = document.querySelector('#pickOne')
 const bgMusic = new Audio('./assets/music.mp3')
 const successSound = new Audio('./assets/success.mp3')
-bgMusic.autoplay = true
-bgMusic.loop = true
 bgMusic.volume = 0.2
 successSound.volume = 0.1
+
 
 // CLASS (for the animation) --------------------------
 class TextScramble {
@@ -95,6 +94,8 @@ const removeItem = item => students.splice(students.indexOf(item), 1);
 
 const pickOne = () => getRandom(students);
 
+// const reset = () => {}
+
 const next = () => {
     scrambleText.setText(students[counter]).then(() => {
         setTimeout(next, 1)
@@ -102,14 +103,14 @@ const next = () => {
     counter = (counter + 1) % students.length;
 }
 
-const stop = (item) => scrambleText.setText(item);
+const stop = item => scrambleText.setText(item);
 
 
 // EVENTS --------------------------
 
 window.addEventListener('load', ()=> {
     students.forEach(item => displayOnList(item))
-    bgMusic.autoplay()
+    bgMusic.play()
 })
 
 editBtn.addEventListener('click', ()=> {
