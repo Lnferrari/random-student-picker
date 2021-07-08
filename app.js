@@ -14,6 +14,8 @@ const closeBtn = document.querySelector('#close')
 const pickOneBtn = document.querySelector('#pickOne')
 const bgMusic = new Audio('./assets/music.mp3')
 const successSound = new Audio('./assets/success.mp3')
+bgMusic.autoplay = true
+bgMusic.loop = true
 bgMusic.volume = 0.2
 successSound.volume = 0.1
 
@@ -104,9 +106,10 @@ const stop = (item) => scrambleText.setText(item);
 
 
 // EVENTS --------------------------
-bgMusic.play()
+
 window.addEventListener('load', ()=> {
     students.forEach(item => displayOnList(item))
+    bgMusic.autoplay()
 })
 
 editBtn.addEventListener('click', ()=> {
