@@ -70,10 +70,10 @@ To get a local copy up and running follow these simple steps.
    ```
 2. Enter your students in `js/app.js`
    ```JS
-   4 const students = [ 'student-1', 'student-2', ...students ]
+   4   const students = [ 'student-1', 'student-2', ...students ]
    ```
 3. Run `index.html`
-   ```
+   ```html
    PICK ONE!
    ```
 
@@ -82,9 +82,15 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<img style="margin: auto;" src="./assets/randpm-picker-1" alt="screenshot" width="400" height="400"/>
-<img style="margin: auto;" src="./assets/randpm-picker-2" alt="screenshot" width="400" height="400"/>
-<img style="margin: auto;" src="./assets/randpm-picker-3" alt="screenshot" width="400" height="400"/>
+<p>
+  By clicking the PICK ONE button will select one of the names which after 2.5 seconds will be displayed as well as removed from the list until the application is restarted. This is achieved by pressing on RESET at any time.
+
+  Ussing the EDIT LIST button will show all the names, differentiating the ones that have already been selected. It is possible to add and/or remove names from the list at any time.
+</p>
+
+</br>
+
+![Random-picker.gif][rp-1.gif]  ![Random-picker.gif][rp-2.gif]
 
 
 
@@ -136,7 +142,9 @@ Distributed under the MIT License.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[[main screenshot]]: ./assets/main-random-picker.png
+[main screenshot]: ./assets/main-random-picker.png
+[rp-1.gif]: ./assets/randompicker1.gif
+[rp-2.gif]: ./assets/randompicker2.gif
 [issues]: https://github.com/Lnferrari/random-student-picker/issues
 [Random student picker]: https://lnferrari.github.io/random-student-picker/
 [linkedin]: https://www.linkedin.com/in/lucasferrari1/
