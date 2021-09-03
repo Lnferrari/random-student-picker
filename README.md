@@ -6,7 +6,7 @@
 </p>
 </br>
 
-Project built 
+
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
