@@ -1,7 +1,9 @@
 <h1 align='center'>Random Student Picker</h1>
 </br>
-Random student selector built in an 8bit design with the objective of being the random students selector of our course.
-It also has the functionality of adding and deleting students from the list in order to be used by anyone.
+<p>
+  Random student selector built in an 8bit design with the objective of being the random students selector of our course.
+  It also has the functionality of adding and deleting students from the list in order to be used by anyone.
+</p>
 </br>
 
 Project built 
