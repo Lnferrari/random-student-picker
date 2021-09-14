@@ -25,7 +25,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <!-- <li><a href="#usage">Usage</a></li> -->
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -66,7 +66,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Lnferrari/random-student-picker.git
+   git clone git@github.com:Lnferrari/random-student-picker.git
    ```
 2. Enter your students in `js/app.js`
    ```JS
